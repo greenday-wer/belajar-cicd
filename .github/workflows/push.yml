@@ -44,12 +44,10 @@ jobs:
              password: ${{ secrets.PASSWORD }}
              port: ${{ secrets.PORT }}
              script: |
-              cd /home/deploy/myapp/
-              tar -xzf "$(date '+%Y-%m-%d')-myapp.tar.gz" -C .
-              cd dist
-              cp -ua . /var/www/myapp
-              cd /var/www/myapp/
-              ls -hal
-              npm install --production
-              pm2 reload ecosystem.config.json --env production
+              cd /home/bayulobi/belajar-cicd
+              git config pull.rebase true
+              git pull origin main
+              docker compose -f docker-compose.yml down
+              docker pull bayulobi/cicd
+              docker compose -f docker-compose.ymp up -d
        
