@@ -39,11 +39,12 @@ jobs:
         - name: Login SSH and Deploy
           uses: appleboy/ssh-action@v1.0.0
           with:
+            key: ${{ secrets.SSH_PRIVATE_KEY }}
             host: ${{ secrets.HOST }}
             username: ${{ secrets.USERNAME }}
             password: ${{ secrets.PASSWORD }}
             port: ${{ secrets.PORT }}
-            
+
             script: 
               cd /home/bayulobi/belajar-cicd
               git config pull.rebase true
