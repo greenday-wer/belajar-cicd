@@ -1,4 +1,4 @@
-version: "3.7"
+version: "3.4"
 
 services:
   cicd:
@@ -11,7 +11,7 @@ services:
      NODE_ENV: development
 
     ports: 
-      - 3000:3000
-      - 2000:2000
+      - 5000:5000
+      - 9229:9229
     command: ["node", "--inspect=0.0.0.0:2000", "app.js"]
     
