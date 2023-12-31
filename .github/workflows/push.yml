@@ -37,8 +37,7 @@ jobs:
            tags: bayulobi/cicd:latest
 
         - name: Login SSH and Deploy
-          uses: JimCronqvist/action-ssh@1.0.0
-
+          uses: appleboy/ssh-action@v1.0.1
           with:
             host: ${{ secrets.HOST }}
             username: ${{ secrets.USERNAME }}
