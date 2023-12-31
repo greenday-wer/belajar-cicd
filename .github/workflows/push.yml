@@ -45,11 +45,11 @@ jobs:
             password: ${{ secrets.PASSWORD }}
             port: ${{ secrets.PORT }}
 
-            script: |
-              cd /home/bayulobi/belajar-cicd
-              git config pull.rebase true
-              git pull origin main
-              docker compose -f docker-compose.yml down
-              docker pull bayulobi/cicd
-              docker compose -f docker-compose.ymp up -d
+            # script: |
+            #   cd /home/bayulobi/belajar-cicd
+            #   git config pull.rebase true
+            #   git pull origin main
+            #   docker compose -f docker-compose.yml down
+            #   docker pull bayulobi/cicd
+            #   docker compose -f docker-compose.ymp up -d
        
