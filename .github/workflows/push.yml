@@ -43,7 +43,7 @@ jobs:
             username: ${{ secrets.USERNAME }}
             password: ${{ secrets.PASSWORD }}
             port: ${{ secrets.PORT }}
-            scripts:
+            script:
               cd /home/bayulobi/belajar-cicd
               git config pull.rebase true
               git pull origin main
