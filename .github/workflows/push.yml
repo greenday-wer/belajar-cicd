@@ -39,10 +39,10 @@ jobs:
         - name: Login SSH and Deploy
           uses: appleboy/ssh-action@v1.0.1
           with:
-            key: ${{ secrets.SSH_PRIVATE_KEY }}
+      
             host: ${{ secrets.HOST }}
-            # username: ${{ secrets.USERNAME }}
-            # password: ${{ secrets.PASSWORD }}
+            username: ${{ secrets.USERNAME }}
+            password: ${{ secrets.PASSWORD }}
             port: ${{ secrets.PORT }}
 
             script: |
