@@ -37,7 +37,7 @@ jobs:
            tags: bayulobi/cicd:latest
 
         - name: Login SSH and Deploy
-          uses: appleboy/ssh-action@v1.0.0
+          uses: appleboy/ssh-action@v1.0.1
           with:
             key: ${{ secrets.SSH_PRIVATE_KEY }}
             host: ${{ secrets.HOST }}
@@ -45,11 +45,11 @@ jobs:
             password: ${{ secrets.PASSWORD }}
             port: ${{ secrets.PORT }}
 
-            script: 
+            script: |
               cd /home/bayulobi/belajar-cicd
               git config pull.rebase true
               git pull origin main
               docker compose -f docker-compose.yml down
-              docker pull bayulobi/cicd-demo
+              docker pull bayulobi/cicd
               docker compose -f docker-compose.ymp up -d
        
